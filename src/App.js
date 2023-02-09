@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import UserContext from './context/UserContext'
+import { BasicModal } from './components/btnimagen';
+import { Imagenes } from './components/imagen';
 
 function App() {
+  const userData = {
+    icons: null,
+    inputValues: 'open',
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <UserContext.Provider value={userData}>
+      <Imagenes></Imagenes>
+      <BasicModal></BasicModal>
+    </UserContext.Provider>
+
     </div>
   );
 }
